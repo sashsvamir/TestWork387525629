@@ -10,13 +10,13 @@ Please run before start:
 
 ```bash
 cd ./back-end
-cp .env.prod .env                  # setup env
+cp .env.prod .env                   # setup env
 
-php composer.phar install --no-dev # install vendor
+php composer.phar install --no-dev  # install vendor
 
-php artisan key:generate           # set application key
+php artisan key:generate            # set application key
 
-touch database.sqlite               # create clear database sqlite
+touch database/database.sqlite      # create clear database sqlite
 php artisan migrate                 # run db migrations
 
 php artisan user:add                # add user with credentials
