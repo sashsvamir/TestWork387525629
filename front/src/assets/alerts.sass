@@ -1,0 +1,69 @@
+//@import '../../node_modules/styled-notifications/dist/notifications.css' // todo: fix import with Vite
+
+
+/*
+ * Redefine alert themes (background colors, icons) to correspond bootstrap colors
+ */
+.ncf-container
+
+    .ncf
+        padding: 15px
+        margin: auto
+        color: #ffffff
+
+        button
+            visibility: hidden
+            &::after
+                font-size: 1.4rem
+                visibility: visible
+                position: absolute
+                top: 0
+                right: 0
+                content: '×'
+                color: #fff
+
+        // Bootstrap styles (available): primary, secondary, success, danger, warning, info, light, dark
+
+        // colors:
+        &.primary
+            background: #{$primary}
+        &.secondary
+            background: #{$secondary}
+        &.success
+            background: #{$success}
+        &.danger
+            background: #{$danger}
+        &.warning
+            background: #{$warning}
+            color: #000
+        &.info
+            background: #{$info}
+        &.light
+            background: #{$light}
+            color: #000
+        &.dark
+            background: #{$dark}
+
+        // icons
+        &.success
+            padding-left: 50px
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzYgMzYiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMzYgMzYiPjxnIGlkPSJpY29ucyI+PHBhdGggZD0ibTEyLjggMjguNy05LjUtOS41Yy0uNC0uNC0uNC0xLjEgMC0xLjZsMS41LTEuNWMuNC0uNCAxLjEtLjQgMS42IDBsNy4yIDcuMiAxNi0xNmMuNC0uNCAxLjEtLjQgMS42IDBsMS41IDEuNWMuNC40LjQgMS4xIDAgMS42TDE0LjQgMjguN2MtLjUuNC0xLjIuNC0xLjYgMHoiIGlkPSJjaGVja194NUZfbWFya18xXyIgZmlsbD0iI2ZmZmZmZiIgY2xhc3M9ImZpbGwtMjIyYTMwIj48L3BhdGg+PC9nPjwvc3ZnPg==")
+            background-size: 26px
+            background-position-x: 12px !important
+        &.warning
+            padding-left: 50px
+            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9Ik91dGxpbmVkIiB2aWV3Qm94PSIwIDAgMzIgMzIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHRpdGxlLz48ZyBpZD0iRmlsbCI+PHBhdGggZD0iTTI5LjY4LDI1LjZsLTExLTIxLjkyYTMsMywwLDAsMC01LjQ0LDBMMi4zMiwyNS42QTMsMywwLDAsMCw1LDMwSDI3YTMsMywwLDAsMCwyLjcyLTQuNFptLTEuODQsMS45MUExLDEsMCwwLDEsMjcsMjhINWExLDEsMCwwLDEtLjg4LS40OSwxLDEsMCwwLDEsMC0xbDExLTIxLjkzaDBhMSwxLDAsMCwxLDEuODYsMGwxMSwyMS45M0ExLDEsMCwwLDEsMjcuODQsMjcuNTFaIi8+PHJlY3QgaGVpZ2h0PSI5IiB3aWR0aD0iMiIgeD0iMTUiIHk9IjExIi8+PGNpcmNsZSBjeD0iMTYiIGN5PSIyNCIgcj0iMiIvPjwvZz48L3N2Zz4=")
+            background-size: 28px
+            background-position-x: 12px !important
+        &.danger
+            padding-left: 50px
+            background-image: url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEyLjQ1IDIuMTVDMTQuOTkyIDQuMDU3IDE3LjU4NyA1IDIwLjI1IDVhLjc1Ljc1IDAgMCAxIC43NS43NVYxMWMwIDUuMDAxLTIuOTU4IDguNjc2LTguNzI1IDEwLjk0OGEuNzUuNzUgMCAwIDEtLjU1IDBDNS45NTggMTkuNjc2IDMgMTYgMyAxMVY1Ljc1QS43NS43NSAwIDAgMSAzLjc1IDVjMi42NjMgMCA1LjI1OC0uOTQzIDcuOC0yLjg1YS43NS43NSAwIDAgMSAuOSAwWk0xMiAzLjY3OGMtMi40MiAxLjcxLTQuOTIzIDIuNjQ4LTcuNSAyLjhWMTFjMCA0LjI1NiAyLjQ1MyA3LjM3OSA3LjUgOS40NDIgNS4wNDctMi4wNjMgNy41LTUuMTg2IDcuNS05LjQ0MlY2LjQ3OGMtMi41NzctLjE1Mi01LjA4LTEuMDktNy41LTIuOFpNMTIgMTZhLjc1Ljc1IDAgMSAxIDAgMS41Ljc1Ljc1IDAgMCAxIDAtMS41Wm0wLTguOTk2YS43NS43NSAwIDAgMSAuNzQzLjY0OGwuMDA3LjEwMnY2LjQ5OGEuNzUuNzUgMCAwIDEtMS40OTMuMTAybC0uMDA3LS4xMDJWNy43NTRhLjc1Ljc1IDAgMCAxIC43NS0uNzVaIiBmaWxsPSIjZmZmZmZmIiBjbGFzcz0iZmlsbC0yMTIxMjEiPjwvcGF0aD48L3N2Zz4=")
+            background-size: 30px
+            background-position-x: 12px !important
+        &.info
+            padding-left: 50px
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTYgMTYiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTYgMTYiPjxwYXRoIGQ9Ik04IDJDNC42OSAyIDIgNC42OSAyIDhzMi42OSA2IDYgNiA2LTIuNjkgNi02LTIuNjktNi02LTZ6bTAgMTFjLTIuNzYgMC01LTIuMjQtNS01czIuMjQtNSA1LTUgNSAyLjI0IDUgNS0yLjI0IDUtNSA1eiIgZmlsbD0iI2ZmZmZmZiIgY2xhc3M9ImZpbGwtMDAwMDAwIj48L3BhdGg+PHBhdGggZD0iTTggNi44NWMtLjI4IDAtLjUuMjItLjUuNXYzLjRjMCAuMjguMjIuNS41LjVzLjUtLjIyLjUtLjV2LTMuNGMwLS4yNy0uMjItLjUtLjUtLjV6TTguMDEgNC44Yy0uMjYtLjAyLS41LjI1LS41MS41MnYuMDhjMCAuMjcuMjEuNDcuNDkuNDhIOGMuMjcgMCAuNDktLjI0LjUtLjV2LS4xMWMwLS4yOS0uMjEtLjQ3LS40OS0uNDd6IiBmaWxsPSIjZmZmZmZmIiBjbGFzcz0iZmlsbC0wMDAwMDAiPjwvcGF0aD48L3N2Zz4=")
+            background-size: 31px
+            background-position-x: 12px !important
+
+
