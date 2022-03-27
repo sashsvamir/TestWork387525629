@@ -39,9 +39,6 @@ Please, run to start application:
 cd ./front
 npm ci
 npm run dev
-# or:
-npm run build
-npm run preview
 ```
 
 
