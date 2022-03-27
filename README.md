@@ -17,7 +17,7 @@ php composer.phar install --no-dev  # install vendor
 php artisan key:generate            # set application key
 
 touch database/database.sqlite      # create clear database sqlite
-php artisan migrate                 # run db migrations
+php artisan migrate --force         # run db migrations
 
 php artisan user:add                # add user with credentials
 
