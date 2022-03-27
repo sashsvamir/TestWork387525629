@@ -17,11 +17,11 @@ php composer.phar install           # install vendor
 php artisan key:generate            # set application key
 
 touch database/database.sqlite      # create clear database sqlite
-php artisan migrate                 # run db migrations
+php artisan migrate --force         # run db migrations
 
 php artisan user:add                # add user with credentials
 
-php artisan db:seed                 # populate entities to db 
+php artisan db:seed --force         # populate entities to db 
 
 php artisan serve                   # run php server
 ```
