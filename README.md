@@ -9,6 +9,7 @@
 Please run before start:
 
 ```bash
+cd ./back-end
 cp .env.prod .env                  # setup env
 php artisan key:generate           # set application key
 
@@ -34,6 +35,7 @@ php artisan serve                   # run php server
 
 Please, run to start application:
 ```sh
+cd ./front
 npm ci
 npm run dev
 # or:
