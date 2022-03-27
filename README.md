@@ -8,7 +8,7 @@
 
 Please run before start:
 
-```bash
+```sh
 cd ./back-end
 cp .env.prod .env                  # setup env
 php artisan key:generate           # set application key
